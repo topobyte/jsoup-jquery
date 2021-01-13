@@ -47,7 +47,7 @@ public class TestInput
 
 		String header = content("jquery.headers.html");
 		System.out.println(header);
-		ElementUtil.appendFragment(head, header);
+		ElementUtil.appendFragment(head, header, HTML.head());
 
 		Body body = builder.getBody();
 
