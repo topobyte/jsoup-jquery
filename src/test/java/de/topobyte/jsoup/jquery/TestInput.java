@@ -22,6 +22,8 @@ import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 import org.jsoup.nodes.Document;
+import org.junit.Assert;
+import org.junit.Test;
 
 import de.topobyte.jsoup.ElementUtil;
 import de.topobyte.jsoup.HTML;
@@ -33,18 +35,17 @@ import de.topobyte.jsoup.components.Input;
 import de.topobyte.jsoup.components.Input.Type;
 import de.topobyte.jsoup.components.P;
 
-public class Test
+public class TestInput
 {
 
-	public static void main(String[] args) throws IOException
+	@Test
+	public void test() throws IOException
 	{
 		HtmlBuilder builder = new HtmlBuilder();
 
 		Head head = builder.getHead();
 
-		String header = IOUtils
-				.toString(Thread.currentThread().getContextClassLoader()
-						.getResourceAsStream("jquery.headers.html"));
+		String header = content("jquery.headers.html");
 		System.out.println(header);
 		ElementUtil.appendFragment(head, header);
 
@@ -70,6 +71,15 @@ public class Test
 		System.out.println(doc);
 
 		builder.write(new File("/tmp/jsoup-jquery.html"));
+
+		String expected = content("test-result.html");
+		Assert.assertEquals(expected, doc.toString());
+	}
+
+	private static String content(String resource) throws IOException
+	{
+		return IOUtils.toString(Thread.currentThread().getContextClassLoader()
+				.getResourceAsStream(resource));
 	}
 
 }

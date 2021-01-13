@@ -29,6 +29,7 @@ dependencies {
 
     testCompile 'de.topobyte:jsoup-utils:0.2.0'
     testCompile 'commons-io:commons-io:2.4'
+    testCompile 'junit:junit:4.13'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
