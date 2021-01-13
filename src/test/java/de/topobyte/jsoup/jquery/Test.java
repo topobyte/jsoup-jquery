@@ -26,11 +26,12 @@ import org.jsoup.nodes.Document;
 import de.topobyte.jsoup.ElementUtil;
 import de.topobyte.jsoup.HTML;
 import de.topobyte.jsoup.HtmlBuilder;
+import de.topobyte.jsoup.components.Body;
 import de.topobyte.jsoup.components.Form;
+import de.topobyte.jsoup.components.Head;
 import de.topobyte.jsoup.components.Input;
 import de.topobyte.jsoup.components.Input.Type;
 import de.topobyte.jsoup.components.P;
-import de.topobyte.jsoup.nodes.Element;
 
 public class Test
 {
@@ -39,7 +40,7 @@ public class Test
 	{
 		HtmlBuilder builder = new HtmlBuilder();
 
-		Element head = builder.getHead();
+		Head head = builder.getHead();
 
 		String header = IOUtils
 				.toString(Thread.currentThread().getContextClassLoader()
@@ -47,7 +48,7 @@ public class Test
 		System.out.println(header);
 		ElementUtil.appendFragment(head, header);
 
-		Element body = builder.getBody();
+		Body body = builder.getBody();
 
 		body.ac(HTML.h1("JSoup and jQuery"));
 

@@ -36,7 +36,7 @@ public class JQuery
 		code.append("});");
 
 		Script script = HTML.script();
-		script.ac(new DataNode(code.toString(), ""));
+		script.ac(new DataNode(code.toString()));
 		return script;
 	}
 

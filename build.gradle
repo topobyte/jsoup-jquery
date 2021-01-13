@@ -25,10 +25,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile 'de.topobyte:jsoup-elements:0.1.1'
-    compile 'org.jsoup:jsoup:1.8.3'
+    compile 'de.topobyte:jsoup-elements:0.2.0'
 
-    testCompile 'de.topobyte:jsoup-utils:0.1.2'
+    testCompile 'de.topobyte:jsoup-utils:0.2.0'
     testCompile 'commons-io:commons-io:2.4'
 }
 
